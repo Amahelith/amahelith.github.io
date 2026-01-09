@@ -143,7 +143,23 @@
       flex-wrap:wrap;
       font-size:.95rem;
     }
-  </style>
+  /* ===== EN-TÊTE : TEXTE À GAUCHE / PHOTO À DROITE ===== */
+
+.hero{
+  display:grid;
+  grid-template-columns: 1fr auto;
+  gap:32px;
+  align-items:center;
+  margin-bottom:32px;
+}
+
+.hero-photo{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+}</style>
 </head>
 
 <body>
