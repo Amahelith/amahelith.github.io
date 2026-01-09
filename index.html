@@ -109,7 +109,26 @@
 .manifesto p:last-child{
   margin-bottom:0;
 }
+/* ===== LIGNES DE FORCE : lisibilité ===== */
+.manifesto{
+  padding: 24px;
+}
 
+.manifesto p{
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+/* écrans larges : 2 colonnes */
+@media (min-width: 860px){
+  .manifesto .mf{
+    columns: 2;
+    column-gap: 36px;
+  }
+  .manifesto .mf p{
+    break-inside: avoid;
+  }
+}
     .placeholder{
       border:1px dashed rgba(232,238,247,.22);
       border-radius:14px;
