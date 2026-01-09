@@ -110,6 +110,18 @@
 .manifesto p:last-child{
   margin-bottom:0;
 }
+/* TEST FORCE : 2 colonnes (sans media query) */
+.manifesto{
+  column-count: 2;
+  column-gap: 36px;
+  column-fill: balance;
+}
+.manifesto h2{
+  column-span: all;
+}
+.manifesto p{
+  break-inside: avoid;
+}
 /* ===== LIGNES DE FORCE : lisibilité ===== */
 .manifesto{
   padding: 24px;
