@@ -1,179 +1,149 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amahë Lith · autrice</title>
+
   <style>
     :root{
       --bg:#0b0f14;
       --card:#101826;
       --text:#e8eef7;
-      --muted:#b8c2d1;
-      --line:rgba(232,238,247,.12);
-      --accent:#8fb7ff;
-      --accent2:#f1c27a;
+      --muted:#8bc2d1;
+      --border:rgba(232,238,247,.12);
       --radius:18px;
       --shadow:0 10px 30px rgba(0,0,0,.35);
       --max:980px;
-      --pad:24px;
     }
 
     *{box-sizing:border-box}
+
     body{
-  margin:0;
-  min-height:100vh;
+      margin:0;
+      min-height:100vh;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans","Helvetica Neue",sans-serif;
+      color:var(--text);
+      line-height:1.55;
 
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background:
+        radial-gradient(1600px 1100px at 20% 30%, rgba(58,108,156,.30), transparent 68%),
+        radial-gradient(1200px 800px at 85% 75%, rgba(168,92,52,.20), transparent 58%),
+        var(--bg);
+    }
 
-  background:
-    /* Bleu Athrryne — froid, profond, renforcé mais toujours diffus */
-    radial-gradient(
-      1600px 1100px at 20% 30%,
-      rgba(58, 108, 156, 0.30),
-      transparent 68%
-    ),
-
-    /* Brun / cuivre — À fleur de gestes — chaud, organique */
-    radial-gradient(
-      1200px 800px at 85% 75%,
-      rgba(168, 92, 52, 0.20),
-      transparent 58%
-    ),
-
-    /* Fond neutre très sombre */
-    #0b0f14;
-
-  color:var(--text);
-  line-height:1.55;
-}
     .wrap{
       max-width:var(--max);
       margin:0 auto;
       padding:38px 18px 48px;
     }
 
-    header{
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(16,24,38,.9), rgba(16,24,38,.65));
+    /* ===== EN-TÊTE ===== */
+    .hero{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:32px;
+      padding:32px 28px;
+      background:linear-gradient(180deg, rgba(16,24,38,.9), rgba(16,24,38,.65));
+      border:1px solid var(--border);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:32px 28px;
     }
 
-    .kicker{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      font-size:.95rem;
-      color:var(--muted);
-    }
-    .dot{
-      width:10px;height:10px;border-radius:50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow:0 0 0 4px rgba(143,183,255,.12);
+    .hero-text h1{
+      margin:0 0 12px 0;
+      font-size:clamp(2.2rem,4vw,3.2rem);
+      letter-spacing:.02em;
     }
 
-    h1{
-      margin:12px 0 6px;
-      font-size: clamp(2.2rem, 4.2vw, 3.2rem);
-      letter-spacing:.2px;
-    }
-    .subtitle{
+    .hero-text p{
       margin:0;
       color:var(--muted);
       font-size:1.05rem;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:18px;
-      margin-top:18px;
-    }
-    @media (max-width: 860px){
-      .grid{grid-template-columns:1fr}
+    .hero-photo img{
+      width:220px;
+      height:220px;
+      object-fit:cover;
+      border-radius:50%;
+      border:1px solid var(--border);
     }
 
-    .card{
-      border:1px solid var(--line);
-      background: rgba(16,24,38,.72);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:var(--pad);
-      min-height:140px;
-    }
-
-    .card h2{
-      margin:0 0 10px;
-      font-size:1.25rem;
-      letter-spacing:.2px;
-    }
-
-    .placeholder{
-      border:1px dashed rgba(232,238,247,.22);
-      border-radius:14px;
-      padding:14px;
-      color:rgba(232,238,247,.65);
-      background: rgba(11,15,20,.25);
-      font-size:.98rem;
-    }
-
+    /* ===== BLOCS ===== */
     .two{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:18px;
       margin-top:18px;
     }
-    @media (max-width: 860px){
-      .two{grid-template-columns:1fr}
+
+    .card{
+      background:rgba(16,24,38,.72);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:24px;
+      min-height:140px;
     }
 
-    footer{
+    .card h2{
+      margin:0 0 10px 0;
+      font-size:1.25rem;
+      letter-spacing:.02em;
+    }
+
+    .placeholder{
+      border:1px dashed rgba(232,238,247,.22);
+      border-radius:14px;
+      padding:14px;
+      font-size:.98rem;
+      color:rgba(232,238,247,.65);
+    }
+
+    /* ===== CONTACT ===== */
+    .footer{
       margin-top:18px;
-      border:1px solid var(--line);
-      background: rgba(16,24,38,.55);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      background:rgba(16,24,38,.55);
+      border:1px solid var(--border);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       padding:18px 22px;
       color:var(--muted);
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
       font-size:.95rem;
     }
-  /* ===== EN-TÊTE : TEXTE À GAUCHE / PHOTO À DROITE ===== */
 
-.hero{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:32px;
-}
-
-.hero-photo img{
-  width:220px;
-  height:220px;
-  object-fit:cover;
-  border-radius:50%;
-  border:1px solid var(--doubler);
-}
+    /* ===== MOBILE ===== */
+    @media (max-width:860px){
+      .hero{
+        flex-direction:column;
+        text-align:center;
+      }
+      .two{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <div class="wrap">
 
     <header class="hero">
-  <div class="hero-text">
-    <h1>Amahë Lith</h1>
-    <p>Autrice · fantasy & récits adulte</p>
-  </div>
+      <div class="hero-text">
+        <h1>Amahë Lith</h1>
+        <p>Autrice · fantasy & récits adulte</p>
+      </div>
 
-  <div class="hero-photo">
-  <img src="photo-amahe.png.png" alt="Photo d’Amahë Lith">
-</div>
-</header>
+      <div class="hero-photo">
+        <img src="photo-amahe.png.png" alt="Photo d’Amahë Lith">
+      </div>
+    </header>
 
     <div class="two">
       <section class="card" aria-label="Athrryne">
@@ -187,9 +157,9 @@
       </section>
     </div>
 
-    <footer aria-label="Contact">
+    <footer class="footer" aria-label="Contact">
       <div>Contact</div>
-      <div class="placeholder" style="min-width:220px;">Ici: email (plus tard)</div>
+      <div class="placeholder" style="min-width:220px">Ici : email (plus tard)</div>
     </footer>
 
   </div>
