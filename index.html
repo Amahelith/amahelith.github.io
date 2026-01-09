@@ -1,12 +1,173 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amahë Lith · autrice</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#101826;
+      --text:#e8eef7;
+      --muted:#b8c2d1;
+      --line:rgba(232,238,247,.12);
+      --accent:#8fb7ff;
+      --accent2:#f1c27a;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --max:980px;
+      --pad:24px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(143,183,255,.18), transparent 55%),
+        radial-gradient(900px 600px at 80% 40%, rgba(241,194,122,.14), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:38px 18px 48px;
+    }
+
+    header{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(16,24,38,.9), rgba(16,24,38,.65));
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:32px 28px;
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      font-size:.95rem;
+      color:var(--muted);
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 0 4px rgba(143,183,255,.12);
+    }
+
+    h1{
+      margin:12px 0 6px;
+      font-size: clamp(2.2rem, 4.2vw, 3.2rem);
+      letter-spacing:.2px;
+    }
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      font-size:1.05rem;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      margin-top:18px;
+    }
+    @media (max-width: 860px){
+      .grid{grid-template-columns:1fr}
+    }
+
+    .card{
+      border:1px solid var(--line);
+      background: rgba(16,24,38,.72);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:var(--pad);
+      min-height:140px;
+    }
+
+    .card h2{
+      margin:0 0 10px;
+      font-size:1.25rem;
+      letter-spacing:.2px;
+    }
+
+    .placeholder{
+      border:1px dashed rgba(232,238,247,.22);
+      border-radius:14px;
+      padding:14px;
+      color:rgba(232,238,247,.65);
+      background: rgba(11,15,20,.25);
+      font-size:.98rem;
+    }
+
+    .two{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-top:18px;
+    }
+    @media (max-width: 860px){
+      .two{grid-template-columns:1fr}
+    }
+
+    footer{
+      margin-top:18px;
+      border:1px solid var(--line);
+      background: rgba(16,24,38,.55);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px 22px;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      font-size:.95rem;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Amahë Lith</h1>
-  <p>Autrice · fantasy & récits adulte</p>
+  <div class="wrap">
+
+    <header>
+      <div class="kicker"><span class="dot"></span> Page d’autrice</div>
+      <h1>Amahë Lith</h1>
+      <p class="subtitle">Autrice · fantasy & récits adulte</p>
+
+      <div class="grid">
+        <section class="card" aria-label="Bloc gauche">
+          <h2>Bloc principal</h2>
+          <div class="placeholder">Ici on mettra la posture + le manifeste (plus tard)</div>
+        </section>
+
+        <section class="card" aria-label="Bloc réseaux">
+          <h2>Réseaux</h2>
+          <div class="placeholder">Ici on mettra les icônes cliquables (plus tard)</div>
+        </section>
+      </div>
+    </header>
+
+    <div class="two">
+      <section class="card" aria-label="Athrryne">
+        <h2>Athrryne (prioritaire)</h2>
+        <div class="placeholder">Ici on mettra le texte + un lien (plus tard)</div>
+      </section>
+
+      <section class="card" aria-label="À fleur de gestes">
+        <h2>À fleur de gestes</h2>
+        <div class="placeholder">Ici on mettra le texte + un lien (plus tard)</div>
+      </section>
+    </div>
+
+    <footer aria-label="Contact">
+      <div>Contact</div>
+      <div class="placeholder" style="min-width:220px;">Ici: email (plus tard)</div>
+    </footer>
+
+  </div>
 </body>
 </html>
