@@ -1,247 +1,270 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amahë Lith · autrice</title>
 
   <style>
-  :root{
-    --bg:#0b0f14;
-    --card:#101826;
-    --text:#e8eef7;
-    --muted:#8bc2d1;
-    --border:rgba(232,238,247,.12);
-    --radius:18px;
-    --shadow:0 10px 30px rgba(0,0,0,.35);
-    --max:980px;
-  }
+    :root{
+      --bg:#0b0f14;
+      --card:#101826;
+      --text:#e8eef7;
+      --muted:#8bc2d1;
+      --border:rgba(232,238,247,.12);
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --max:980px;
+    }
 
-  *{ box-sizing:border-box }
+    *{box-sizing:border-box}
 
-  body{
-    margin:0;
-    min-height:100vh;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans","Helvetica Neue",sans-serif;
-    color:var(--text);
-    line-height:1.55;
-    background:
-      radial-gradient(1600px 1100px at 20% 30%, rgba(58,108,156,.30), transparent 68%),
-      radial-gradient(1200px 800px at 85% 75%, rgba(168,92,52,.20), transparent 58%),
-      var(--bg);
-  }
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Noto Sans","Helvetica Neue",sans-serif;
+      color:var(--text);
+      line-height:1.55;
 
-  .wrap{
-    max-width:var(--max);
-    margin:0 auto;
-    padding:38px 18px 48px;
-  }
+      background:
+        radial-gradient(1600px 1100px at 20% 30%, rgba(58,108,156,.30), transparent 68%),
+        radial-gradient(1200px 800px at 85% 75%, rgba(168,92,52,.20), transparent 58%),
+        var(--bg);
+    }
 
-  /* ===== EN-TÊTE ===== */
-  .hero{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:32px;
-    padding:32px 28px;
-    background:linear-gradient(180deg, rgba(16,24,38,.9), rgba(16,24,38,.65));
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-  }
+    /* IMPORTANT : évite le bleu “lien par défaut” */
+    a{ color:inherit; text-decoration:none; }
+    a:hover{ text-decoration:underline; }
 
-  .hero-text h1{
-    margin:0 0 12px;
-    font-size:clamp(2.2rem,4vw,3.2rem);
-    letter-spacing:.02em;
-  }
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:38px 18px 48px;
+    }
 
-  .hero-text p{
-    margin:0;
-    color:var(--muted);
-    font-size:1.05rem;
-  }
-
-  .hero-photo img{
-    width:220px;
-    height:220px;
-    object-fit:cover;
-    border-radius:50%;
-    border:1px solid var(--border);
-  }
-
-  /* ===== LIGNES DE FORCE ===== */
-  .manifesto{
-    margin-top:18px;
-    padding:24px;
-    background:rgba(16,24,38,.72);
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-
-    column-count:2;
-    column-gap:36px;
-    column-fill:balance;
-  }
-
-  .manifesto h2{
-    margin:0 0 14px;
-    font-size:1.6rem;
-    letter-spacing:.02em;
-    column-span:all;
-  }
-
-  .manifesto p{
-    margin:0 0 12px;
-    break-inside:avoid;
-    font-size:1.02rem;
-    line-height:1.8;
-  }
-
-  /* ===== BLOCS UNIVERS ===== */
-  .two{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
-    margin-top:18px;
-  }
-
-  .card{
-    background:rgba(16,24,38,.72);
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    padding:24px;
-    min-height:140px;
-  }
-
-  .card h2{
-    margin:0 0 10px;
-    font-size:1.25rem;
-    letter-spacing:.02em;
-  }
-
-  .placeholder{
-    border:1px dashed rgba(232,238,247,.22);
-    border-radius:14px;
-    padding:14px;
-    font-size:.98rem;
-    color:rgba(232,238,247,.65);
-  }
-
-  /* ===== CONTACT ===== */
-  footer{
-    margin-top:18px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:12px;
-    background:rgba(16,24,38,.55);
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    padding:18px 22px;
-    font-size:.95rem;
-  }
-
-  /* ===== MOBILE ===== */
-  @media (max-width:860px){
+    /* ===== EN-TÊTE ===== */
     .hero{
-      flex-direction:column;
-      text-align:center;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:32px;
+
+      padding:32px 28px;
+      background:linear-gradient(180deg, rgba(16,24,38,.90), rgba(16,24,38,.65));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
     }
+
+    .hero-text h1{
+      margin:0 0 12px 0;
+      font-size:clamp(2.2rem,4vw,3.2rem);
+      letter-spacing:.02em;
+    }
+
+    /* FORÇAGE couleur (plus de bleu) */
+    .hero-text p{
+      margin:0;
+      color:var(--text);
+      font-size:1.05rem;
+    }
+
+    .hero-photo img{
+      width:220px;
+      height:220px;
+      object-fit:cover;
+      border-radius:50%;
+      border:1px solid var(--border);
+    }
+
+    /* ===== BLOCS ===== */
     .two{
-      grid-template-columns:1fr;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-top:18px;
     }
+
+    .card{
+      background:rgba(16,24,38,.72);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:24px;
+      min-height:140px;
+    }
+
+    .card h2{
+      margin:0 0 10px 0;
+      font-size:1.25rem;
+      letter-spacing:.02em;
+      color:var(--text);
+    }
+
+    .placeholder{
+      border:1px dashed rgba(232,238,247,.22);
+      border-radius:14px;
+      padding:14px;
+      font-size:.98rem;
+      color:rgba(232,238,247,.65);
+      background:rgba(11,15,20,.25);
+    }
+
+    /* ===== LIGNES DE FORCE (2 colonnes réelles, alignées) ===== */
     .manifesto{
-      column-count:1;
+      margin-top:18px;
     }
-  }
+
+    .manifesto h2{
+      margin:0 0 14px 0;
+      font-size:1.6rem;
+      letter-spacing:.04em;
+      color:var(--text);
+    }
+
+    .manifesto-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:36px;
+      align-items:start;
+    }
+
+    .mf p{
+      margin:0 0 14px 0;
+      color:var(--text);
+      font-size:1.02rem;
+      line-height:1.8;
+    }
+
+    .mf p:last-child{
+      margin-bottom:0;
+    }
+
+    /* ===== CONTACT ===== */
+    .footer{
+      margin-top:18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+
+      background:rgba(16,24,38,.55);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px 22px;
+
+      color:var(--text); /* FORÇAGE (plus de bleu) */
+      font-size:.95rem;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width:860px){
+      .hero{
+        flex-direction:column;
+        text-align:center;
+      }
+      .two{
+        grid-template-columns:1fr;
+      }
+      .manifesto-grid{
+        grid-template-columns:1fr;
+        gap:0;
+      }
+    }
   </style>
 </head>
 
 <body>
-<div class="wrap">
+  <div class="wrap">
 
-  <header class="hero">
-    <div class="hero-text">
-      <h1>Amahë Lith</h1>
-      <p>Autrice · fantasy & récits adulte</p>
-    </div>
+    <header class="hero">
+      <div class="hero-text">
+        <h1>Amahë Lith</h1>
+        <p>Autrice · fantasy &amp; récits adulte</p>
+      </div>
 
-    <div class="hero-photo">
-      <img src="photo-amahe.png.png" alt="Photo d’Amahë Lith">
-    </div>
-  </header>
+      <div class="hero-photo">
+        <img src="photo-amahe.png.png" alt="Photo d’Amahë Lith">
+      </div>
+    </header>
 
-  <section class="manifesto" aria-label="Lignes de force">
-    <h2>Lignes de force</h2>
+    <section class="card manifesto" aria-label="Lignes de force">
+      <h2>Lignes de force</h2>
 
-    <p>J’invente des mondes où les dragons ont des états d’âme,<br>
-    et où les failles humaines ne sont jamais décoratives.</p>
+      <div class="manifesto-grid">
+        <!-- COLONNE GAUCHE -->
+        <div class="mf">
+          <p>J’invente des mondes où les dragons ont des états d’âme,<br>
+          et où les failles humaines ne sont jamais décoratives.</p>
 
-    <p>Parce que les luttes intérieures méritent mieux qu’un discours de développement personnel.<br>
-    Elles ont droit à un dragon de compagnie stylé.</p>
+          <p>Parce que les luttes intérieures méritent mieux qu’un discours de développement personnel.<br>
+          Elles ont droit à un dragon de compagnie stylé.</p>
 
-    <p>Ici, la tendresse a des crocs.<br>
-    Pas tout le temps.<br>
-    Juste quand c’est nécessaire.</p>
+          <p>Ici, la tendresse a des crocs.<br>
+          Pas tout le temps.<br>
+          Juste quand c’est nécessaire.</p>
 
-    <p>Les fêlures ne sont pas des faiblesses.<br>
-    Ce sont des points d’appui.<br>
-    Des endroits par lesquels la lumière insiste pour entrer.</p>
+          <p>Les fêlures ne sont pas des faiblesses.<br>
+          Ce sont des points d’appui.<br>
+          Des endroits par lesquels la lumière insiste pour entrer.</p>
 
-    <p>J’écris des récits incarnés.<br>
-    Parfois épiques.<br>
-    Parfois beaucoup trop proches de la peau.</p>
+          <p>J’écris des récits incarnés.<br>
+          Parfois épiques.<br>
+          Parfois beaucoup trop proches de la peau.</p>
 
-    <p>Des histoires où le corps compte.<br>
-    Où le consentement n’est pas un détail.<br>
-    Où la parole n’est pas décorative.<br>
-    Où se reconstruire n’est ni héroïque, ni linéaire, mais vital.</p>
+          <p>Des histoires où le corps compte.<br>
+          Où le consentement n’est pas un détail.<br>
+          Où la parole n’est pas décorative.<br>
+          Où se reconstruire n’est ni héroïque, ni linéaire, mais vital.</p>
+        </div>
 
-    <p>Le rêve y est un acte de résistance.<br>
-    La logique a décliné l’invitation.<br>
-    Et honnêtement, elle ne nous manque pas.</p>
+        <!-- COLONNE DROITE -->
+        <div class="mf">
+          <p>Le rêve y est un acte de résistance.<br>
+          La logique a décliné l’invitation.<br>
+          Et honnêtement, elle ne nous manque pas.</p>
 
-    <p>Je parle d’amour sans domination.<br>
-    De désir sans violence.<br>
-    De relations adultes, avec leurs ratés, leurs peurs, leurs élans mal calibrés.</p>
+          <p>Je parle d’amour sans domination.<br>
+          De désir sans violence.<br>
+          De relations adultes, avec leurs ratés, leurs peurs, leurs élans mal calibrés.</p>
 
-    <p>Je défends l’inclusivité, la pluralité des corps,<br>
-    des choix,<br>
-    des manières d’aimer,<br>
-    sans demander la permission.</p>
+          <p>Je défends l’inclusivité, la pluralité des corps,<br>
+          des choix,<br>
+          des manières d’aimer,<br>
+          sans demander la permission.</p>
 
-    <p>Et l’humour ?<br>
-    Indispensable.<br>
-    Pas pour faire passer la pilule.<br>
-    Pour respirer.<br>
-    Pour survivre à l’intensité.<br>
-    Pour balancer des vannes à deux balles quand tout devient trop sérieux.</p>
+          <p>Et l’humour ?<br>
+          Indispensable.<br>
+          Pas pour faire passer la pilule.<br>
+          Pour respirer.<br>
+          Pour survivre à l’intensité.<br>
+          Pour balancer des vannes à deux balles quand tout devient trop sérieux.</p>
 
-    <p>Parce qu’on ne survit pas à ce qui tremble<br>
-    sans savoir rire,<br>
-    surtout quand tout part en cacahuète.</p>
-  </section>
-
-  <div class="two">
-    <section class="card" aria-label="Athrryne">
-      <h2>Athrryne (prioritaire)</h2>
-      <div class="placeholder">Ici on mettra le texte + un lien (plus tard)</div>
+          <p>Parce qu’on ne survit pas à ce qui tremble<br>
+          sans savoir rire,<br>
+          surtout quand tout part en cacahuète.</p>
+        </div>
+      </div>
     </section>
 
-    <section class="card" aria-label="À fleur de gestes">
-      <h2>À fleur de gestes</h2>
-      <div class="placeholder">Ici on mettra le texte + un lien (plus tard)</div>
-    </section>
+    <div class="two">
+      <section class="card" aria-label="Athrryne">
+        <h2>Athrryne (prioritaire)</h2>
+        <div class="placeholder">Ici on mettra le texte + un lien (plus tard)</div>
+      </section>
+
+      <section class="card" aria-label="À fleur de gestes">
+        <h2>À fleur de gestes</h2>
+        <div class="placeholder">Ici on mettra le texte + un lien (plus tard)</div>
+      </section>
+    </div>
+
+    <footer class="footer" aria-label="Contact">
+      <div>Contact</div>
+      <div class="placeholder" style="min-width:220px">Ici : email (plus tard)</div>
+    </footer>
+
   </div>
-
-  <footer aria-label="Contact">
-    <div>Contact</div>
-    <div class="placeholder" style="min-width:220px">Ici : email (plus tard)</div>
-  </footer>
-
-</div>
 </body>
 </html>
