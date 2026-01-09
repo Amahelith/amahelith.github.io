@@ -146,19 +146,18 @@
   /* ===== EN-TÊTE : TEXTE À GAUCHE / PHOTO À DROITE ===== */
 
 .hero{
-  display:grid;
-  grid-template-columns: 1fr auto;
-  gap:32px;
+  display:flex;
   align-items:center;
-  margin-bottom:32px;
+  justify-content:space-between;
+  gap:32px;
 }
 
-.hero-photo{
-  width:140px;
-  height:140px;
+.hero-photo img{
+  width:220px;
+  height:220px;
+  object-fit:cover;
   border-radius:50%;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
+  border:1px solid var(--doubler);
 }</style>
 </head>
 
