@@ -10,11 +10,12 @@
       --bg:#0b0f14;
       --card:#101826;
       --text:#e8eef7;
-      --muted:#8bc2d1;
+      --muted:#b8c2d1;
       --border:rgba(232,238,247,.12);
       --radius:18px;
       --shadow:0 10px 30px rgba(0,0,0,.35);
       --max:980px;
+      --accent:#8fb7ff;
     }
 
     *{box-sizing:border-box}
@@ -22,7 +23,7 @@
     body{
       margin:0;
       min-height:100vh;
-      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Noto Sans","Helvetica Neue",sans-serif;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans","Helvetica Neue",sans-serif;
       color:var(--text);
       line-height:1.55;
 
@@ -32,9 +33,10 @@
         var(--bg);
     }
 
-    /* IMPORTANT : évite le bleu “lien par défaut” */
+    /* Empêche le bleu des liens par défaut */
     a{ color:inherit; text-decoration:none; }
-    a:hover{ text-decoration:underline; }
+    a:visited{ color:inherit; }
+    a:hover{ text-decoration:none; }
 
     .wrap{
       max-width:var(--max);
@@ -48,7 +50,6 @@
       justify-content:space-between;
       align-items:center;
       gap:32px;
-
       padding:32px 28px;
       background:linear-gradient(180deg, rgba(16,24,38,.90), rgba(16,24,38,.65));
       border:1px solid var(--border);
@@ -62,10 +63,9 @@
       letter-spacing:.02em;
     }
 
-    /* FORÇAGE couleur (plus de bleu) */
     .hero-text p{
       margin:0;
-      color:var(--text);
+      color:var(--text); /* pas bleu */
       font-size:1.05rem;
     }
 
@@ -75,6 +75,7 @@
       object-fit:cover;
       border-radius:50%;
       border:1px solid var(--border);
+      display:block;
     }
 
     /* ===== BLOCS ===== */
@@ -98,7 +99,6 @@
       margin:0 0 10px 0;
       font-size:1.25rem;
       letter-spacing:.02em;
-      color:var(--text);
     }
 
     .placeholder{
@@ -107,37 +107,67 @@
       padding:14px;
       font-size:.98rem;
       color:rgba(232,238,247,.65);
-      background:rgba(11,15,20,.25);
     }
 
-    /* ===== LIGNES DE FORCE (2 colonnes réelles, alignées) ===== */
+    /* ===== LIGNES DE FORCE (dépliable) ===== */
     .manifesto{
       margin-top:18px;
+      padding:24px;
     }
 
     .manifesto h2{
       margin:0 0 14px 0;
       font-size:1.6rem;
-      letter-spacing:.04em;
-      color:var(--text);
+      letter-spacing:.02em;
     }
 
-    .manifesto-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:36px;
-      align-items:start;
-    }
-
-    .mf p{
-      margin:0 0 14px 0;
+    .manifesto p{
+      margin:0 0 12px 0;
       color:var(--text);
+      line-height:1.75;
       font-size:1.02rem;
-      line-height:1.8;
     }
 
-    .mf p:last-child{
-      margin-bottom:0;
+    .manifesto p:last-child{ margin-bottom:0; }
+
+    /* Conteneur caché/visible */
+    .manifesto-more{
+      overflow:hidden;
+      max-height:0;
+      opacity:0;
+      transition:max-height .35s ease, opacity .25s ease;
+    }
+
+    .manifesto.is-open .manifesto-more{
+      max-height:2000px; /* largement assez */
+      opacity:1;
+    }
+
+    /* Bouton */
+    .read-more{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-top:10px;
+      padding:10px 14px;
+      border-radius:14px;
+      border:1px solid rgba(232,238,247,.22);
+      background:rgba(11,15,20,.25);
+      color:var(--text);
+      font-size:1rem;
+      cursor:pointer;
+      user-select:none;
+      width:fit-content;
+    }
+
+    .read-more:hover{
+      border-color:rgba(232,238,247,.35);
+      background:rgba(11,15,20,.35);
+    }
+
+    .read-more:focus{
+      outline:2px solid rgba(143,183,255,.55);
+      outline-offset:3px;
     }
 
     /* ===== CONTACT ===== */
@@ -147,14 +177,12 @@
       justify-content:space-between;
       align-items:center;
       gap:12px;
-
       background:rgba(16,24,38,.55);
       border:1px solid var(--border);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       padding:18px 22px;
-
-      color:var(--text); /* FORÇAGE (plus de bleu) */
+      color:var(--text); /* pas bleu */
       font-size:.95rem;
     }
 
@@ -167,9 +195,9 @@
       .two{
         grid-template-columns:1fr;
       }
-      .manifesto-grid{
-        grid-template-columns:1fr;
-        gap:0;
+      .footer{
+        flex-direction:column;
+        align-items:flex-start;
       }
     }
   </style>
@@ -181,7 +209,7 @@
     <header class="hero">
       <div class="hero-text">
         <h1>Amahë Lith</h1>
-        <p>Autrice · fantasy &amp; récits adulte</p>
+        <p>Autrice · fantasy & récits adulte</p>
       </div>
 
       <div class="hero-photo">
@@ -189,30 +217,90 @@
       </div>
     </header>
 
-    <section class="card manifesto" aria-label="Lignes de force">
+    <!-- LIGNES DE FORCE -->
+    <section class="card manifesto" aria-label="Lignes de force" id="lignes-de-force">
       <h2>Lignes de force</h2>
 
-  <div class="mf">
-  <p>
-    J’invente des mondes où les dragons ont des états d’âme,<br>
-    et où les failles humaines ne sont jamais décoratives.
-  </p>
+      <!-- Aperçu (toujours visible) -->
+      <p>
+        J’invente des mondes où les dragons ont des états d’âme,<br>
+        et où les failles humaines ne sont jamais décoratives.
+      </p>
 
-  <p>
-    Parce que les luttes intérieures méritent mieux qu’un discours de développement personnel.<br>
-    Elles ont droit à un dragon de compagnie stylé.
-  </p>
+      <p>
+        Parce que les luttes intérieures méritent mieux qu’un discours de développement personnel.<br>
+        Elles ont droit à un dragon de compagnie stylé.
+      </p>
 
-  <p>
-    Ici, la tendresse a des crocs.
-  </p>
+      <p>Ici, la tendresse a des crocs.</p>
 
-  <a href="lignes-de-force.html" class="btn-suite">
-    Lire la suite →
-  </a>
-</div>
+      <!-- Suite (dépliable) -->
+      <div class="manifesto-more" id="manifesto-more" aria-hidden="true">
+        <p>
+          Pas tout le temps.<br>
+          Juste quand c’est nécessaire.
+        </p>
+
+        <p>
+          Les fêlures ne sont pas des faiblesses.<br>
+          Ce sont des points d’appui.<br>
+          Des endroits par lesquels la lumière insiste pour entrer.
+        </p>
+
+        <p>
+          J’écris des récits incarnés.<br>
+          Parfois épiques.<br>
+          Parfois beaucoup trop proches de la peau.
+        </p>
+
+        <p>
+          Des histoires où le corps compte.<br>
+          Où le consentement n’est pas un détail.<br>
+          Où la parole n’est pas décorative.<br>
+          Où se reconstruire n’est ni héroïque, ni linéaire, mais vital.
+        </p>
+
+        <p>
+          Le rêve y est un acte de résistance.<br>
+          La logique a décliné l’invitation.<br>
+          Et honnêtement, elle ne nous manque pas.
+        </p>
+
+        <p>
+          Je parle d’amour sans domination.<br>
+          De désir sans violence.<br>
+          De relations adultes, avec leurs ratés, leurs peurs, leurs élans mal calibrés.
+        </p>
+
+        <p>
+          Je défends l’inclusivité, la pluralité des corps,<br>
+          des choix,<br>
+          des manières d’aimer,<br>
+          sans demander la permission.
+        </p>
+
+        <p>
+          Et l’humour ?<br>
+          Indispensable.<br>
+          Pas pour faire passer la pilule.<br>
+          Pour respirer.<br>
+          Pour survivre à l’intensité.<br>
+          Pour balancer des vannes à deux balles quand tout devient trop sérieux.
+        </p>
+
+        <p>
+          Parce qu’on ne survit pas à ce qui tremble<br>
+          sans savoir rire,<br>
+          surtout quand tout part en cacahuète.
+        </p>
+      </div>
+
+      <button class="read-more" id="read-more" type="button" aria-expanded="false" aria-controls="manifesto-more">
+        Lire la suite →
+      </button>
     </section>
 
+    <!-- 2 CARTES -->
     <div class="two">
       <section class="card" aria-label="Athrryne">
         <h2>Athrryne (prioritaire)</h2>
@@ -225,11 +313,32 @@
       </section>
     </div>
 
+    <!-- CONTACT -->
     <footer class="footer" aria-label="Contact">
       <div>Contact</div>
       <div class="placeholder" style="min-width:220px">Ici : email (plus tard)</div>
     </footer>
 
   </div>
+
+  <script>
+    (function(){
+      const section = document.getElementById("lignes-de-force");
+      const more = document.getElementById("manifesto-more");
+      const btn = document.getElementById("read-more");
+
+      function setOpen(open){
+        section.classList.toggle("is-open", open);
+        btn.setAttribute("aria-expanded", String(open));
+        more.setAttribute("aria-hidden", String(!open));
+        btn.textContent = open ? "Réduire ↑" : "Lire la suite →";
+      }
+
+      btn.addEventListener("click", function(){
+        const isOpen = section.classList.contains("is-open");
+        setOpen(!isOpen);
+      });
+    })();
+  </script>
 </body>
 </html>
