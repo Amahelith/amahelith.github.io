@@ -112,10 +112,11 @@
 }
 /* TEST FORCE : 2 colonnes (sans media query) */
 .manifesto{
-  column-count: 2;
+.manifesto{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   column-gap: 36px;
-  column-fill: balance;
-outline: 6px solid #ff00ff !important;
+  padding: 24px;
 }
 .manifesto h2{
   column-span: all;
@@ -124,9 +125,6 @@ outline: 6px solid #ff00ff !important;
   break-inside: avoid;
 }
 /* ===== LIGNES DE FORCE : lisibilité ===== */
-.manifesto{
-  padding: 24px;
-}
 
 .manifesto p{
   font-size: 1.02rem;
