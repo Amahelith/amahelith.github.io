@@ -122,13 +122,17 @@
 
 /* écrans larges : 2 colonnes */
 @media (min-width: 860px){
-  .manifesto .mf{
-    columns:2;
-    column-gap:36px;
+  .manifesto{
+    column-count: 2;
+    column-gap: 36px;
     column-fill: balance;
   }
 
-  .manifesto .mf p{
+  .manifesto h2{
+    column-span: all;
+  }
+
+  .manifesto p{
     break-inside: avoid;
   }
 }    .placeholder{
