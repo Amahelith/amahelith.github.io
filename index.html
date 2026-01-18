@@ -338,17 +338,22 @@
 <div class="two">
   <section class="card" aria-label="Athrryne">
     <h2>Athrryne · L’Héritière des Astres</h2>
-    <p>
+   <p>
   Saga de fantasy épique<br>
   Dragons · Utopie incarnée · Réparateur· Politique · Prophéties · Inclusivité
 </p>
 
-<p><em>
-  Une saga où les légendes côtoient l’intime, où la politique s’entrelace au trauma,
-  et où l’humour surgit parfois là où on ne l’attend pas, comme une respiration nécessaire.
-</em></p>
+<div class="manifesto-more" id="athrryne-more" aria-hidden="true">
+  <p><em>
+    Une saga où les légendes côtoient l’intime, où la politique s’entrelace au trauma,
+    et où l’humour surgit parfois là où on ne l’attend pas, comme une respiration nécessaire.
+  </em></p>
+</div>
 
-<button class="read-more" type="button">
+<button class="read-more" type="button"
+        aria-expanded="false"
+        aria-controls="athrryne-more"
+        onclick="toggleCard('athrryne-more', this)">
   Découvrir →
 </button>
 
@@ -358,12 +363,17 @@
   Sensuel · Lucide · Corps pluriels · Désir · Consentement · Humour
 </p>
 
-<p><em>
-  L’humour y est un moteur, une respiration permanente, une manière de raconter
-  l’intime, le doute et les peurs, sans les figer, sans les durcir.
-</em></p>
+<div class="manifesto-more" id="fleur-more" aria-hidden="true">
+  <p><em>
+    L’humour y est un moteur, une respiration permanente, une manière de raconter
+    l’intime, le doute et les peurs, sans les figer, sans les durcir.
+  </em></p>
+</div>
 
-<button class="read-more" type="button">
+<button class="read-more" type="button"
+        aria-expanded="false"
+        aria-controls="fleur-more"
+        onclick="toggleCard('fleur-more', this)">
   Découvrir →
 </button>
 
