@@ -4,7 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amahë Lith · autrice</title>
-<meta name="description" content="Amahë Lith, autrice de fantasy & récits adulte. Des mondes inventés pour des vérités qui piquent. Saga Athrryne et roman À fleur de gestes." />
+
+  <!-- Meta description (utile pour aperçu / partage / Google) -->
+  <meta name="description" content="Amahë Lith, autrice de fantasy & récits adulte. Des mondes inventés pour des vérités qui piquent. Saga Athrryne et roman À fleur de gestes." />
+
+  <!-- Favicon : upload favicon.png à la racine du dépôt -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
   <style>
     :root{
       --bg:#0b0f14;
@@ -104,6 +110,13 @@
       background:rgba(11,15,20,.30);
     }
 
+    /* X + Facebook plus discrets */
+    .social-link.secondary{
+      opacity:.75;
+      transform:scale(.92);
+      transform-origin:left center;
+    }
+
     .social-name{
       font-weight:600;
     }
@@ -129,6 +142,13 @@
       display:block;
     }
 
+    /* ===== MICRO INTRO AVANT PROJETS ===== */
+    .intro-projects{
+      margin:28px 0 12px;
+      font-size:.95rem;
+      color:var(--muted);
+    }
+
     /* ===== BLOCS ===== */
     .two{
       display:grid;
@@ -152,7 +172,7 @@
       letter-spacing:.02em;
     }
 
-    /* ===== LIGNES DE FORCE (dépliable) ===== */
+    /* ===== DÉPLIABLES ===== */
     .manifesto{
       margin-top:18px;
       padding:24px;
@@ -185,13 +205,12 @@
       opacity:1;
     }
 
-    /* Permet d’ouvrir un bloc manifesto-more sans parent .manifesto */
+    /* Ouvrir un manifesto-more sans parent .manifesto */
     .manifesto-more.is-open{
       max-height:2000px;
       opacity:1;
     }
 
-    /* Bouton */
     .read-more{
       display:inline-flex;
       align-items:center;
@@ -218,6 +237,16 @@
       outline-offset:3px;
     }
 
+    /* ===== FOOTER ===== */
+    .footer{
+      margin-top:32px;
+      padding:16px;
+      text-align:center;
+      font-size:.8rem;
+      color:var(--muted);
+      opacity:.7;
+    }
+
     /* ===== MOBILE ===== */
     @media (max-width:860px){
       .wrap{ padding:26px 16px 40px; }
@@ -234,20 +263,20 @@
         margin-bottom:10px;
       }
 
-    .hero-subtitle{
-  font-size:1.05rem;
-  white-space:nowrap;
-}
+      .hero-subtitle{
+        font-size:1.05rem;
+        white-space:nowrap;
+      }
 
-    .hero-tagline{
-  font-size:.78rem;
-  line-height:1.35;
-  margin-top:3px;
-}
+      .hero-tagline{
+        font-size:.78rem;
+        line-height:1.35;
+        margin-top:3px;
+      }
 
       .social-links{
         display:grid;
-        grid-template-columns:repeat(3, auto); /* 3 sur la première ligne */
+        grid-template-columns:repeat(3, auto);
         gap:8px 10px;
         max-width:320px;
         margin-top:12px;
@@ -268,21 +297,20 @@
         margin-top:6px;
       }
 
-  .hero-photo{
-  margin-top:-10px;
-}
+      .hero-photo{
+        margin-top:-10px;
+      }
 
-.hero-photo img{
-  width:84px;
-  height:84px;
-}
+      .hero-photo img{
+        width:84px;
+        height:84px;
+      }
 
       .two{
         grid-template-columns:1fr;
       }
     }
 
-    /* Très petits écrans */
     @media (max-width:420px){
       .social-links{
         grid-template-columns:repeat(2, auto);
@@ -295,6 +323,7 @@
 <body>
   <div class="wrap">
 
+    <!-- HERO -->
     <header class="hero">
       <div class="hero-text">
         <h1>Amahë Lith</h1>
@@ -317,12 +346,12 @@
             <span class="social-name">YouTube</span>
           </a>
 
-          <a class="social-link" href="https://x.com/Biloulette" target="_blank" rel="noopener noreferrer">
+          <a class="social-link secondary" href="https://x.com/Biloulette" target="_blank" rel="noopener noreferrer">
             <span aria-hidden="true">✖️</span>
             <span class="social-name">X</span>
           </a>
 
-          <a class="social-link" href="https://www.facebook.com/amahelith" target="_blank" rel="noopener noreferrer">
+          <a class="social-link secondary" href="https://www.facebook.com/amahelith" target="_blank" rel="noopener noreferrer">
             <span aria-hidden="true">📘</span>
             <span class="social-name">Facebook</span>
           </a>
@@ -332,14 +361,16 @@
       </div>
 
       <div class="hero-photo">
-        <!-- Si ton fichier a un autre nom, remplace juste le src ci-dessous -->
         <img src="photo-amahe.png.png" alt="Photo d’Amahë Lith">
       </div>
     </header>
 
+    <!-- Transition -->
+    <p class="intro-projects">Deux projets. Deux tonalités. Une même exigence.</p>
+
     <!-- CARTES PROJETS -->
     <div class="two">
-     <section class="card" aria-label="Athrryne" id="athrryne">
+      <section class="card" aria-label="Athrryne" id="athrryne">
         <h2>Athrryne · L’Héritière des Astres</h2>
 
         <p>
@@ -465,6 +496,11 @@
         Lire la suite →
       </button>
     </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      © Amahë Lith · 2026 · Tous droits réservés
+    </footer>
 
   </div>
 
