@@ -1,282 +1,494 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amahë Lith · autrice</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amahë Lith · autrice</title>
 
-<meta name="description" content="Amahë Lith, autrice de fantasy et de récits adulte. Des mondes inventés pour des vérités qui piquent.">
-<link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Amahë Lith, autrice de fantasy & récits adulte. Des mondes inventés pour des vérités qui piquent." />
+  <link rel="icon" type="image/png" href="favicon.png" />
 
-<style>
-:root{
-  --bg:#0b0f14;
-  --card:#101826;
-  --text:#e8eef7;
-  --muted:#b8c2d1;
-  --border:rgba(232,238,247,.12);
-  --radius:18px;
-  --shadow:0 10px 30px rgba(0,0,0,.35);
-  --max:980px;
-}
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#101826;
+      --text:#e8eef7;
+      --muted:#b8c2d1;
+      --border:rgba(232,238,247,.12);
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --max:980px;
+      --focus:rgba(143,183,255,.55);
+    }
 
-*{box-sizing:border-box}
+    *{ box-sizing:border-box; }
 
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  color:var(--text);
-  line-height:1.55;
-  background:
-    radial-gradient(1600px 1100px at 20% 30%, rgba(58,108,156,.30), transparent 68%),
-    radial-gradient(1200px 800px at 85% 75%, rgba(168,92,52,.20), transparent 58%),
-    var(--bg);
-}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Noto Sans","Helvetica Neue",sans-serif;
+      color:var(--text);
+      line-height:1.55;
+      background:
+        radial-gradient(1600px 1100px at 20% 30%, rgba(58,108,156,.30), transparent 68%),
+        radial-gradient(1200px 800px at 85% 75%, rgba(168,92,52,.20), transparent 58%),
+        var(--bg);
+    }
 
-.wrap{
-  max-width:var(--max);
-  margin:auto;
-  padding:38px 18px 48px;
-}
+    a{ color:inherit; text-decoration:none; }
+    a:visited{ color:inherit; }
 
-.hero{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:28px;
-  padding:32px 28px;
-  background:linear-gradient(180deg, rgba(16,24,38,.90), rgba(16,24,38,.65));
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-}
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:38px 18px 48px;
+    }
 
-.hero-text h1{
-  margin:0 0 10px 0;
-  font-size:clamp(2.2rem,4vw,3.2rem);
-}
+    /* ===== HERO ===== */
+    .hero{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:28px;
+      padding:32px 28px;
+      background:linear-gradient(180deg, rgba(16,24,38,.90), rgba(16,24,38,.65));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
 
-.hero-subtitle{
-  font-size:1.25rem;
-  margin:0;
-}
+    .hero-text{
+      min-width:0;
+      flex:1;
+    }
 
-.hero-tagline{
-  font-size:1.05rem;
-  font-style:italic;
-  margin:4px 0 0;
-  white-space:nowrap;
-}
+    .hero-text h1{
+      margin:0 0 10px 0;
+      font-size:clamp(2.2rem,4vw,3.2rem);
+      letter-spacing:.02em;
+    }
 
-.hero-photo img{
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  object-fit:cover;
-  border:1px solid var(--border);
-}
+    /* 2) +1 point environ (1.05 -> 1.12) */
+    .hero-subtitle{
+      margin:0;
+      font-size:1.12rem;
+      color:var(--text);
+      white-space:nowrap;
+    }
 
-.social-links{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:14px;
-}
+    /* 1) tenter de garder sur une seule ligne */
+    .hero-tagline{
+      margin:6px 0 0;
+      font-size:1.02rem;
+      font-style:italic;
+      color:var(--text);
+      white-space:nowrap;
+    }
 
-.social-link{
-  padding:6px 10px;
-  font-size:.85rem;
-  border:1px solid rgba(232,238,247,.18);
-  border-radius:14px;
-  background:rgba(11,15,20,.20);
-}
+    .hero-photo{
+      flex:0 0 auto;
+      margin-top:6px;
+    }
 
-.social-link.secondary{
-  opacity:.7;
-  font-size:.75rem;
-}
+    .hero-photo img{
+      width:112px;
+      height:112px;
+      object-fit:cover;
+      border-radius:50%;
+      border:1px solid var(--border);
+      display:block;
+    }
 
-.contact-note{
-  font-size:.7rem;
-  opacity:.55;
-  margin-top:6px;
-}
+    /* ===== RÉSEAUX ===== */
+    .social{
+      margin-top:14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
 
-.intro-projects{
-  text-align:center;
-  margin:32px 0 18px;
-  font-size:.95rem;
-  color:var(--muted);
-}
+    .social-row{
+      display:flex;
+      flex-wrap:nowrap;
+      gap:10px;
+      align-items:center;
+    }
 
-.card{
-  background:rgba(16,24,38,.72);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:24px;
-  margin-bottom:18px;
-}
+    .social-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 10px;
+      font-size:.85rem;
+      border:1px solid rgba(232,238,247,.18);
+      border-radius:14px;
+      background:rgba(11,15,20,.20);
+      color:var(--text);
+      line-height:1;
+      white-space:nowrap;
+    }
 
-.card h2{
-  margin:0 0 10px 0;
-}
+    .social-link:hover{
+      border-color:rgba(232,238,247,.35);
+      background:rgba(11,15,20,.30);
+    }
 
-.manifesto-more{
-  overflow:hidden;
-  max-height:0;
-  opacity:0;
-  transition:max-height .4s ease, opacity .3s ease;
-}
+    .social-link:focus{
+      outline:2px solid var(--focus);
+      outline-offset:3px;
+    }
 
-.card.is-open .manifesto-more{
-  max-height:4000px;
-  opacity:1;
-}
+    /* X + FB plus petits */
+    .social-link.secondary{
+      font-size:.75rem;
+      opacity:.85;
+      padding:6px 9px;
+    }
 
-.read-more{
-  margin-top:12px;
-  padding:8px 14px;
-  border-radius:14px;
-  border:1px solid rgba(232,238,247,.22);
-  background:rgba(11,15,20,.25);
-  cursor:pointer;
-}
+    .contact-note{
+      margin:6px 0 0;
+      font-size:.72rem;
+      color:var(--muted);
+      opacity:.65;
+    }
 
-.footer{
-  margin-top:40px;
-  text-align:center;
-  font-size:.75rem;
-  opacity:.6;
-}
+    /* ===== INTRO PROJETS (3) centré ===== */
+    .intro-projects{
+      text-align:center;
+      margin:32px 0 18px;
+      font-size:.95rem;
+      color:var(--muted);
+    }
 
-@media(max-width:860px){
-  .hero{flex-direction:column}
-}
-</style>
+    /* ===== CARTES ===== */
+    .card{
+      background:rgba(16,24,38,.72);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:24px;
+      margin-bottom:18px;
+    }
+
+    .card h2{
+      margin:0 0 10px 0;
+      font-size:1.25rem;
+      letter-spacing:.02em;
+    }
+
+    .meta{
+      margin:8px 0 0;
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    .fixed-italic{
+      margin:12px 0 0;
+      font-style:italic;
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    /* Dépliants */
+    .more{
+      overflow:hidden;
+      max-height:0;
+      opacity:0;
+      transition:max-height .4s ease, opacity .25s ease;
+    }
+
+    .card.is-open .more{
+      max-height:9000px;
+      opacity:1;
+    }
+
+    /* Boutons (flèche visible) */
+    .toggle{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-top:14px;
+      padding:10px 14px;
+      border-radius:14px;
+      border:1px solid rgba(232,238,247,.22);
+      background:rgba(11,15,20,.25);
+      color:var(--text);
+      font-size:1rem;
+      cursor:pointer;
+      user-select:none;
+      width:fit-content;
+    }
+
+    .toggle:hover{
+      border-color:rgba(232,238,247,.35);
+      background:rgba(11,15,20,.35);
+    }
+
+    .toggle:focus{
+      outline:2px solid var(--focus);
+      outline-offset:3px;
+    }
+
+    /* Footer */
+    .footer{
+      margin-top:40px;
+      text-align:center;
+      font-size:.75rem;
+      color:var(--muted);
+      opacity:.7;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width:860px){
+      .hero{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .hero-photo{
+        margin-top:10px;
+      }
+
+      .hero-subtitle,
+      .hero-tagline{
+        white-space:normal; /* si vraiment ça doit passer en 2 lignes sur petits écrans */
+      }
+
+      .social-row{
+        flex-wrap:wrap;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<div class="wrap">
+  <div class="wrap">
 
-<header class="hero">
-  <div class="hero-text">
-    <h1>Amahë Lith</h1>
-    <p class="hero-subtitle">Autrice fantasy & récits adulte</p>
-    <p class="hero-tagline">Des mondes inventés pour des vérités qui piquent</p>
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-text">
+        <h1>Amahë Lith</h1>
+        <p class="hero-subtitle">Autrice fantasy & récits adulte</p>
+        <p class="hero-tagline">Des mondes inventés pour des vérités qui piquent</p>
 
-    <nav class="social-links">
-      <span class="social-link">Insta</span>
-      <span class="social-link">YouTube</span>
-      <span class="social-link">TikTok</span>
-      <span class="social-link secondary">X</span>
-      <span class="social-link secondary">Facebook</span>
-    </nav>
+        <div class="social" aria-label="Réseaux sociaux">
+          <div class="social-row">
+            <a class="social-link" href="https://www.instagram.com/amahelith" target="_blank" rel="noopener">Insta</a>
+            <a class="social-link" href="https://www.youtube.com/@Biloulettte" target="_blank" rel="noopener">YouTube</a>
+            <a class="social-link" href="https://www.tiktok.com/@amahelith" target="_blank" rel="noopener">TikTok</a>
+          </div>
 
-    <p class="contact-note">Pour me contacter, passez par mes réseaux</p>
+          <div class="social-row">
+            <a class="social-link secondary" href="https://x.com/Biloulette" target="_blank" rel="noopener noreferrer">X</a>
+            <a class="social-link secondary" href="https://www.facebook.com/amahelith" target="_blank" rel="noopener noreferrer">Facebook</a>
+          </div>
+        </div>
+
+        <p class="contact-note">Pour me contacter, passez par mes réseaux</p>
+      </div>
+
+      <div class="hero-photo">
+        <!-- IMPORTANT : j’utilise le nom de fichier vu dans ton code précédent -->
+        <img src="photo-amahe.png.png" alt="Photo d’Amahë Lith" />
+      </div>
+    </header>
+
+    <p class="intro-projects">Deux projets. Deux tonalités. Une même exigence.</p>
+
+    <!-- ATHRRYNE -->
+    <section class="card" id="athrryne">
+      <h2>Athrryne · L’Héritière des Astres</h2>
+
+      <p class="meta">
+        Saga de fantasy épique<br>
+        Dragons · Utopie incarnée · Réparateur · Politique · Prophéties · Inclusivité
+      </p>
+
+      <!-- TEXTE FIXE VISIBLE -->
+      <p class="fixed-italic">
+        Une saga où les légendes côtoient l’intime, où la politique s’entrelace au trauma, et où l’humour surgit parfois là où on ne l’attend pas, comme une respiration nécessaire.
+      </p>
+
+      <!-- TEXTE DÉPLIÉ -->
+      <div class="more" aria-hidden="true">
+        <p class="fixed-italic">
+          Une faille s’ouvre. L’utopie s’engouffre. Et rien ne sera plus jamais rangé.<br>
+          Sur Athrryne, les légendes sont troubles. Les prophéties… vivantes.<br>
+          Bienvenue dans une épopée à la fois douce et sauvage, où l’inclusivité se mêle à la poésie et la tendresse à des éclats un peu perchés.<br>
+          Pour les cabossé·es en quête d’évasion.<br><br>
+
+          2306. Une mission de routine. Un ravitaillement sans histoire. Jusqu’au point de rupture.<br>
+          Des voyageurs du futur, projetés dans un monde où la magie défie la science.<br>
+          Tout s’effondre.<br><br>
+
+          Des survivants à la lisière des possibles.<br><br>
+
+          Sous l’ombre de deux soleils, dans un paysage aussi sublime que troublant, la frontière entre rêve et cauchemar s’efface.<br>
+          Leurs repères volent en éclats.<br><br>
+
+          Qui sont-ils, après tout ce qu’ils ont perdu ?<br><br>
+
+          Akira, l’une des dernières rescapées, devra affronter la vérité derrière le cataclysme…<br>
+          Et découvrir qu’il n’y a pas que la planète qui cache des secrets…<br><br>
+
+          Un voyage où l’intime rencontre la fantasy.<br>
+          Où l’étrange et le brutal dansent au rythme d’une quête de sens.<br><br>
+
+          Parfois, il faut tout perdre pour se retrouver.
+        </p>
+      </div>
+
+      <button class="toggle"
+              type="button"
+              data-closed="Découvrir →"
+              data-open="Réduire ↑"
+              aria-expanded="false">
+        Découvrir →
+      </button>
+    </section>
+
+    <!-- À FLEUR DE GESTES -->
+    <section class="card" id="afleur">
+      <h2>À fleur de gestes · romance adulte</h2>
+
+      <p class="meta">
+        Sensuel · Lucide · Corps pluriels · Désir · Consentement · Humour
+      </p>
+
+      <!-- TEXTE FIXE VISIBLE -->
+      <p class="fixed-italic">
+        L’humour y est un moteur, une respiration permanente, une manière de raconter l’intime, le doute et les peurs, sans les figer, sans les durcir.
+      </p>
+
+      <!-- TEXTE DÉPLIÉ -->
+      <div class="more" aria-hidden="true">
+        <p class="fixed-italic">
+          À Paris, Naelis a 25 ans.<br>
+          Psychologue, chanteuse, femme libre, elle assume sa féminité et son désir sans compromis. Elle aime intensément, rit fort, analyse beaucoup (déformation professionnelle) et peut compter sur ses trois amies, véritables mousquetaires du quotidien : solidaires, drôles, parfois excessives… et toujours là quand il faut refaire le monde autour d’un verre.<br>
+          Mais après une première expérience qui la laisse fragilisée, quelque chose se fissure.<br>
+          Désirer devient moins simple.<br>
+          Faire confiance, plus risqué.<br>
+          Même quand l’envie est bien là.<br><br>
+
+          Ewen, 30 ans, est bassiste.<br>
+          Il vit entre Paris et l’Écosse, entre l’ancrage et le vent, les silences qui rassurent et ceux qui compliquent tout. Sauvage, attentif et sensible, il a un vrai talent pour ressentir beaucoup… et dire peu. Un don qui peut mener très loin. Ou droit au bord du gouffre.<br><br>
+
+          Entre eux, rien n’est simple.<br>
+          Le désir brûle, mais la peur veille.<br>
+          Chaque geste rapproche… ou expose un peu trop.<br><br>
+
+          À fleur de gestes est une comédie romantique érotique contemporaine, sensuelle, engagée et profondément humaine.<br>
+          Un roman qui parle d’amour sans domination,<br>
+          de désir sans violence,<br>
+          de corps sans mensonge…<br>
+          Le tout porté par une généreuse touche d’humour, des dialogues ciselés et une galerie de personnages qu’on aimerait bien inviter à dîner.
+        </p>
+      </div>
+
+      <button class="toggle"
+              type="button"
+              data-closed="Découvrir →"
+              data-open="Réduire ↑"
+              aria-expanded="false">
+        Découvrir →
+      </button>
+    </section>
+
+    <!-- LIGNES DE FORCE -->
+    <section class="card" id="lignes-de-force">
+      <h2>Lignes de force</h2>
+
+      <!-- TEXTE FIXE VISIBLE -->
+      <p class="meta">
+        J’invente des mondes où les dragons ont des états d’âme,<br>
+        et où les failles humaines ne sont jamais décoratives.<br>
+        Parce que les luttes intérieures méritent mieux qu’un discours de développement personnel.<br>
+        Elles ont droit à un dragon de compagnie stylé.<br>
+        Ici, la tendresse a des crocs.
+      </p>
+
+      <!-- TEXTE DÉPLIÉ (ENTIER, TEL QUE TU L’AS DONNÉ) -->
+      <div class="more" aria-hidden="true">
+        <p class="meta">
+          J’invente des mondes où les dragons ont des états d’âme,<br>
+          et où les failles humaines ne sont jamais décoratives.<br>
+          Parce que les luttes intérieures méritent mieux qu’un discours de développement personnel.<br>
+          Elles ont droit à un dragon de compagnie stylé.<br>
+          Ici, la tendresse a des crocs.<br><br>
+
+          Pas tout le temps.<br>
+          Juste quand c’est nécessaire.<br>
+          Les fêlures ne sont pas des faiblesses.<br>
+          Ce sont des points d’appui.<br>
+          Des endroits par lesquels la lumière insiste pour entrer.<br><br>
+
+          J’écris des récits incarnés.<br>
+          Parfois épiques.<br>
+          Parfois beaucoup trop proches de la peau.<br><br>
+
+          Des histoires où le corps compte.<br>
+          Où le consentement n’est pas un détail.<br>
+          Où la parole n’est pas décorative.<br>
+          Où se reconstruire n’est ni héroïque, ni linéaire, mais vital.<br><br>
+
+          Le rêve y est un acte de résistance.<br>
+          La logique a décliné l’invitation.<br>
+          Et honnêtement, elle ne nous manque pas.<br><br>
+
+          Je parle d’amour sans domination.<br>
+          De désir sans violence.<br>
+          De relations adultes, avec leurs ratés, leurs peurs, leurs élans mal calibrés.<br><br>
+
+          Je défends l’inclusivité, la pluralité des corps,<br>
+          des choix,<br>
+          des manières d’aimer,<br>
+          sans demander la permission.<br><br>
+
+          Et l’humour ?<br>
+          Indispensable.<br>
+          Pas pour faire passer la pilule.<br>
+          Pour respirer.<br>
+          Pour survivre à l’intensité.<br>
+          Pour balancer des vannes à deux balles quand tout devient trop sérieux.<br><br>
+
+          On ne survit pas à ce qui tremble<br>
+          sans savoir rire,<br>
+          surtout quand tout part en cacahuète.
+        </p>
+      </div>
+
+      <button class="toggle"
+              type="button"
+              data-closed="Lire la suite →"
+              data-open="Réduire ↑"
+              aria-expanded="false">
+        Lire la suite →
+      </button>
+    </section>
+
+    <footer class="footer">
+      © Amahë Lith · 2026 · Tous droits réservés
+    </footer>
+
   </div>
 
-  <div class="hero-photo">
-    <img src="photo-amahe.png" alt="Photo d’Amahë Lith">
-  </div>
-</header>
+  <script>
+    (function(){
+      function wireCard(section){
+        const btn = section.querySelector('.toggle');
+        const more = section.querySelector('.more');
+        if(!btn || !more) return;
 
-<p class="intro-projects">Deux projets. Deux tonalités. Une même exigence.</p>
+        btn.addEventListener('click', function(){
+          const isOpen = section.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', String(isOpen));
+          more.setAttribute('aria-hidden', String(!isOpen));
+          btn.textContent = isOpen ? btn.dataset.open : btn.dataset.closed;
+        });
+      }
 
-<!-- ATHRRYNE -->
-<section class="card">
-  <h2>Athrryne · L’Héritière des Astres</h2>
-  <p>Saga de fantasy épique<br>
-  Dragons · Utopie incarnée · Réparateur · Politique · Prophéties · Inclusivité</p>
-
-  <p><em>
-  Une saga où les légendes côtoient l’intime, où la politique s’entrelace au trauma,
-  et où l’humour surgit parfois là où on ne l’attend pas, comme une respiration nécessaire.
-  </em></p>
-
-  <div class="manifesto-more">
-    <p><em>[4e de couverture complète telle que fournie]</em></p>
-  </div>
-
-  <button class="read-more" onclick="toggleCard(this)">Découvrir →</button>
-</section>
-
-<!-- À FLEUR -->
-<section class="card">
-  <h2>À fleur de gestes · romance adulte</h2>
-  <p>Sensuel · Lucide · Corps pluriels · Désir · Consentement · Humour</p>
-
-  <p><em>
-  L’humour y est un moteur, une respiration permanente, une manière de raconter l’intime,
-  le doute et les peurs, sans les figer, sans les durcir.
-  </em></p>
-
-  <div class="manifesto-more">
-    <p><em>[Résumé long complet tel que fourni]</em></p>
-  </div>
-
-  <button class="read-more" onclick="toggleCard(this)">Découvrir →</button>
-</section>
-
-<!-- LIGNES DE FORCE -->
-<section class="card">
-  <h2>Lignes de force</h2>
-  <p>
-  J’invente des mondes où les dragons ont des états d’âme,<br>
-  et où les failles humaines ne sont jamais décoratives.<br>
-  Parce que les luttes intérieures méritent mieux qu’un discours de développement personnel.<br>
-  Elles ont droit à un dragon de compagnie stylé.<br>
-  Ici, la tendresse a des crocs.
-  </p>
-
-  <div class="manifesto-more">
-    <p>
-    Pas tout le temps.<br>
-    Juste quand c’est nécessaire.<br>
-    Les fêlures ne sont pas des faiblesses.<br>
-    Ce sont des points d’appui.<br>
-    Des endroits par lesquels la lumière insiste pour entrer.<br><br>
-    J’écris des récits incarnés.<br>
-    Parfois épiques.<br>
-    Parfois beaucoup trop proches de la peau.<br><br>
-    Des histoires où le corps compte.<br>
-    Où le consentement n’est pas un détail.<br>
-    Où la parole n’est pas décorative.<br>
-    Où se reconstruire n’est ni héroïque, ni linéaire, mais vital.<br><br>
-    Le rêve y est un acte de résistance.<br>
-    La logique a décliné l’invitation.<br>
-    Et honnêtement, elle ne nous manque pas.<br><br>
-    Je parle d’amour sans domination.<br>
-    De désir sans violence.<br>
-    De relations adultes, avec leurs ratés, leurs peurs, leurs élans mal calibrés.<br><br>
-    Je défends l’inclusivité, la pluralité des corps, des choix, des manières d’aimer,
-    sans demander la permission.<br><br>
-    Et l’humour ? Indispensable.<br>
-    Pas pour faire passer la pilule.<br>
-    Pour respirer.<br>
-    Pour survivre à l’intensité.<br>
-    Pour balancer des vannes à deux balles quand tout devient trop sérieux.<br><br>
-    On ne survit pas à ce qui tremble sans savoir rire,
-    surtout quand tout part en cacahuète.
-    </p>
-  </div>
-
-  <button class="read-more" onclick="toggleCard(this)">Lire la suite →</button>
-</section>
-
-<footer class="footer">
-© Amahë Lith · 2026 · Tous droits réservés
-</footer>
-
-</div>
-
-<script>
-function toggleCard(btn){
-  const card = btn.closest('.card');
-  card.classList.toggle('is-open');
-  btn.textContent = card.classList.contains('is-open') ? 'Réduire ↑' : btn.textContent.includes('Lire') ? 'Lire la suite →' : 'Découvrir →';
-}
-</script>
-
+      document.querySelectorAll('.card').forEach(wireCard);
+    })();
+  </script>
 </body>
 </html>
