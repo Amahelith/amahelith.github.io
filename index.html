@@ -70,13 +70,21 @@
     }
 
     .hero-photo img{
-      width:220px;
-      height:220px;
-      object-fit:cover;
-      border-radius:50%;
-      border:1px solid var(--border);
-      display:block;
-    }
+  width:220px;
+  height:220px;
+  object-fit:cover;
+  border-radius:50%;
+  border:1px solid var(--border);
+  display:block;
+}
+
+/* Photo réduite uniquement sur mobile */
+@media (max-width: 600px){
+  .hero-photo img{
+    width:120px;
+    height:120px;
+  }
+}
 
     /* ===== BLOCS ===== */
     .two{
