@@ -240,27 +240,34 @@
 
     /* ===== MOBILE ===== */
     @media (max-width:860px){
-      .hero{
-        flex-direction:row;
-        align-items:flex-start;
-      }
+  .hero{
+    flex-direction:column;
+    align-items:flex-start;
+    position:relative;
+    padding-right:150px;
+  }
 
-      .hero-photo{
-        margin-top:10px;
-      }
-.hero-photo img{
-  width:96px;
-  height:96px;
+  .hero-photo{
+    position:absolute;
+    top:18px;
+    right:18px;
+    margin-top:0;
+  }
+
+  .hero-photo img{
+    width:104px;
+    height:104px;
+  }
+
+  .hero-subtitle,
+  .hero-tagline{
+    white-space:nowrap;
+  }
+
+  .social-row{
+    flex-wrap:wrap;
+  }
 }
-      .hero-subtitle,
-      .hero-tagline{
-        white-space:normal; /* si vraiment ça doit passer en 2 lignes sur petits écrans */
-      }
-
-      .social-row{
-        flex-wrap:wrap;
-      }
-    }
   </style>
 </head>
 
