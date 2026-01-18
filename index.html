@@ -3,10 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amahë Lith · autrice</title>
+  <title>Amahë Lith · Autrice Fantasy & Romance Adulte</title>
 
-  <meta name="description" content="Amahë Lith, autrice de fantasy & récits adulte. Des mondes inventés pour des vérités qui piquent." />
+  <meta name="description" content="Découvrez les univers d'Amahë Lith. De la fantasy épique avec 'Athrryne' à la romance adulte avec 'À fleur de gestes'. Des récits inclusifs, intenses et humains." />
+  <meta name="author" content="Amahë Lith" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- URL Canonique -->
+  <link rel="canonical" href="https://amahelith.fr/" />
+
   <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Open Graph / Facebook / LinkedIn / Discord -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.amahelith.fr/" />
+  <meta property="og:title" content="Amahë Lith · Autrice Fantasy & Romance Adulte" />
+  <meta property="og:description" content="Des mondes inventés pour des vérités qui piquent. Découvrez la saga Athrryne et le roman À fleur de gestes." />
+  <!-- 1200x630 -->
+  <meta property="og:image" content="https://www.amahelith.com/social-share.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.amahelith.com/" />
+  <meta name="twitter:title" content="Amahë Lith · Autrice Fantasy & Romance Adulte" />
+  <meta name="twitter:description" content="Des mondes inventés pour des vérités qui piquent. Fantasy épique & Romance adulte." />
+  <!-- 1200x630 -->
+  <meta name="twitter:image" content="https://www.amahelith.com/social-share.png" />
+  <meta name="twitter:creator" content="@Biloulette" />
 
   <style>
     :root{
@@ -73,17 +96,15 @@
       margin:0;
       font-size:1.12rem;
       color:var(--text);
-      white-space:nowrap;
     }
 
     /* 1) tenter de garder sur une seule ligne */
     .hero-tagline{
-  margin:6px 0 0;
-  font-size:0.95rem;
-  font-style:italic;
-  color:var(--text);
-  white-space:nowrap;
-}
+      margin:6px 0 0;
+      font-size:0.95rem;
+      font-style:italic;
+      color:var(--text);
+    }
 
     .hero-photo{
       flex:0 0 auto;
@@ -114,35 +135,22 @@
       align-items:center;
     }
 
-    .social-link{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:6px 10px;
-      font-size:.85rem;
-      border:1px solid rgba(232,238,247,.18);
-      border-radius:14px;
-      background:rgba(11,15,20,.20);
-      color:var(--text);
-      line-height:1;
-      white-space:nowrap;
+    .social-link {
+      cursor: pointer;
+      opacity: 0.8;
+      display: flex;
+      align-items: center;
+      justify-items: center;
     }
 
-    .social-link:hover{
-      border-color:rgba(232,238,247,.35);
-      background:rgba(11,15,20,.30);
+    .social-link:hover {
+      zoom: 1.2;
+      opacity: 1;
     }
 
     .social-link:focus{
       outline:2px solid var(--focus);
       outline-offset:3px;
-    }
-
-    /* X + FB plus petits */
-    .social-link.secondary{
-      font-size:.75rem;
-      opacity:.85;
-      padding:6px 9px;
     }
 
     .contact-note{
@@ -240,35 +248,49 @@
 
     /* ===== MOBILE ===== */
     @media (max-width:860px){
-  .hero{
-    flex-direction:column;
-    align-items:flex-start;
-    position:relative;
-    padding-right:150px;
-  }
+      .hero{
+        flex-direction:column;
+        align-items:flex-start;
+        position:relative;
+        padding-right:150px;
+      }
 
-  .hero-photo{
-    position:absolute;
-    top:18px;
-    right:18px;
-    margin-top:0;
-  }
+      .hero-photo{
+        position:absolute;
+        top:18px;
+        right:18px;
+        margin-top:0;
+      }
 
-  .hero-photo img{
-    width:104px;
-    height:104px;
-  }
+      .hero-photo img{
+        width:104px;
+        height:104px;
+      }
 
-  .hero-subtitle,
-  .hero-tagline{
-    white-space:nowrap;
-  }
-
-  .social-row{
-    flex-wrap:wrap;
-  }
-}
+      .social-row{
+        flex-wrap:wrap;
+      }
+    }
   </style>
+
+  <!-- Données structurées (JSON-LD) pour Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Amahë Lith",
+    "url": "https://amahelith.fr",
+    "image": "https://amahelith.fr/photo-amahe.png",
+    "jobTitle": "Autrice",
+    "sameAs": [
+      "https://www.instagram.com/amahelith",
+      "https://www.youtube.com/@Biloulettte",
+      "https://www.tiktok.com/@amahelith",
+      "https://x.com/Biloulette",
+      "https://www.facebook.com/amahelith"
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -283,23 +305,33 @@
 
         <div class="social" aria-label="Réseaux sociaux">
           <div class="social-row">
-            <a class="social-link" href="https://www.instagram.com/amahelith" target="_blank" rel="noopener">Insta</a>
-            <a class="social-link" href="https://www.youtube.com/@Biloulettte" target="_blank" rel="noopener">YouTube</a>
-            <a class="social-link" href="https://www.tiktok.com/@amahelith" target="_blank" rel="noopener">TikTok</a>
+            <a class="social-link" href="https://www.instagram.com/amahelith" target="_blank" rel="noopener">
+              <img src="./icons/instagram.png" alt="Logo Instagram" width="24" height="24" />
+            </a>
+            <a class="social-link" href="https://www.youtube.com/@Biloulettte" target="_blank" rel="noopener">
+              <img src="./icons/youtube.png" alt="Logo Youtube" width="24" height="24" />
+            </a>
+            <a class="social-link" href="https://www.tiktok.com/@amahelith" target="_blank" rel="noopener">
+              <img src="./icons/tiktok.png" alt="Logo TikTok" width="26" height="26" />
+            </a>
           </div>
 
           <div class="social-row">
-            <a class="social-link secondary" href="https://x.com/Biloulette" target="_blank" rel="noopener noreferrer">X</a>
-            <a class="social-link secondary" href="https://www.facebook.com/amahelith" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a class="social-link" href="https://x.com/Biloulette" target="_blank" rel="noopener noreferrer">
+              <img src="./icons/twitter.png" alt="Logo Twitter" width="24" height="24" />
+            </a>
+            <a class="social-link" href="https://www.facebook.com/amahelith" target="_blank" rel="noopener noreferrer">
+              <img src="./icons/facebook.png" alt="Logo Facebook" width="24" height="24" />
+            </a>
           </div>
         </div>
 
-        <p class="contact-note">Pour me contacter, passez par mes réseaux</p>
+        <p class="contact-note">Pour me contacter, privélégiez mes réseaux</p>
       </div>
 
       <div class="hero-photo">
         <!-- IMPORTANT : j’utilise le nom de fichier vu dans ton code précédent -->
-        <img src="photo-amahe.png.png" alt="Photo d’Amahë Lith" />
+        <img src="photo-amahe.png" alt="Photo d’Amahë Lith" />
       </div>
     </header>
 
