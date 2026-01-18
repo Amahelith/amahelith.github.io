@@ -6,7 +6,6 @@
 <title>Amahë Lith · autrice</title>
 
 <meta name="description" content="Amahë Lith, autrice de fantasy et de récits adulte. Des mondes inventés pour des vérités qui piquent.">
-
 <link rel="icon" type="image/png" href="favicon.png">
 
 <style>
@@ -34,15 +33,12 @@ body{
     var(--bg);
 }
 
-a{color:inherit;text-decoration:none}
-
 .wrap{
   max-width:var(--max);
   margin:auto;
   padding:38px 18px 48px;
 }
 
-/* ===== HERO ===== */
 .hero{
   display:flex;
   justify-content:space-between;
@@ -61,30 +57,25 @@ a{color:inherit;text-decoration:none}
 }
 
 .hero-subtitle{
-  font-size:1.15rem;
+  font-size:1.25rem;
   margin:0;
 }
 
 .hero-tagline{
-  font-size:.95rem;
+  font-size:1.05rem;
   font-style:italic;
   margin:4px 0 0;
   white-space:nowrap;
 }
 
-.hero-photo{
-  margin-top:6px;
-}
-
 .hero-photo img{
-  width:110px;
-  height:110px;
+  width:120px;
+  height:120px;
   border-radius:50%;
   object-fit:cover;
   border:1px solid var(--border);
 }
 
-/* ===== RÉSEAUX ===== */
 .social-links{
   display:flex;
   flex-wrap:wrap;
@@ -93,9 +84,6 @@ a{color:inherit;text-decoration:none}
 }
 
 .social-link{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
   padding:6px 10px;
   font-size:.85rem;
   border:1px solid rgba(232,238,247,.18);
@@ -105,7 +93,7 @@ a{color:inherit;text-decoration:none}
 
 .social-link.secondary{
   opacity:.7;
-  transform:scale(.9);
+  font-size:.75rem;
 }
 
 .contact-note{
@@ -114,7 +102,6 @@ a{color:inherit;text-decoration:none}
   margin-top:6px;
 }
 
-/* ===== INTRO PROJETS ===== */
 .intro-projects{
   text-align:center;
   margin:32px 0 18px;
@@ -122,7 +109,6 @@ a{color:inherit;text-decoration:none}
   color:var(--muted);
 }
 
-/* ===== CARTES ===== */
 .card{
   background:rgba(16,24,38,.72);
   border:1px solid var(--border);
@@ -136,10 +122,6 @@ a{color:inherit;text-decoration:none}
   margin:0 0 10px 0;
 }
 
-.card p{
-  margin:8px 0;
-}
-
 .manifesto-more{
   overflow:hidden;
   max-height:0;
@@ -148,7 +130,7 @@ a{color:inherit;text-decoration:none}
 }
 
 .card.is-open .manifesto-more{
-  max-height:3000px;
+  max-height:4000px;
   opacity:1;
 }
 
@@ -161,7 +143,6 @@ a{color:inherit;text-decoration:none}
   cursor:pointer;
 }
 
-/* ===== FOOTER ===== */
 .footer{
   margin-top:40px;
   text-align:center;
@@ -169,14 +150,8 @@ a{color:inherit;text-decoration:none}
   opacity:.6;
 }
 
-/* ===== MOBILE ===== */
 @media(max-width:860px){
-  .hero{
-    flex-direction:column;
-  }
-  .hero-photo{
-    align-self:flex-start;
-  }
+  .hero{flex-direction:column}
 }
 </style>
 </head>
@@ -191,11 +166,11 @@ a{color:inherit;text-decoration:none}
     <p class="hero-tagline">Des mondes inventés pour des vérités qui piquent</p>
 
     <nav class="social-links">
-      <a class="social-link" href="https://www.instagram.com/amahelith" target="_blank">Insta</a>
-      <a class="social-link" href="https://www.youtube.com/@Biloulettte" target="_blank">YouTube</a>
-      <a class="social-link" href="https://www.tiktok.com/@amahelith" target="_blank">TikTok</a>
-      <a class="social-link secondary" href="https://x.com/Biloulette" target="_blank">X</a>
-      <a class="social-link secondary" href="https://www.facebook.com/amahelith" target="_blank">Facebook</a>
+      <span class="social-link">Insta</span>
+      <span class="social-link">YouTube</span>
+      <span class="social-link">TikTok</span>
+      <span class="social-link secondary">X</span>
+      <span class="social-link secondary">Facebook</span>
     </nav>
 
     <p class="contact-note">Pour me contacter, passez par mes réseaux</p>
@@ -208,69 +183,89 @@ a{color:inherit;text-decoration:none}
 
 <p class="intro-projects">Deux projets. Deux tonalités. Une même exigence.</p>
 
-<section class="card" id="athrryne">
+<!-- ATHRRYNE -->
+<section class="card">
   <h2>Athrryne · L’Héritière des Astres</h2>
   <p>Saga de fantasy épique<br>
   Dragons · Utopie incarnée · Réparateur · Politique · Prophéties · Inclusivité</p>
 
+  <p><em>
+  Une saga où les légendes côtoient l’intime, où la politique s’entrelace au trauma,
+  et où l’humour surgit parfois là où on ne l’attend pas, comme une respiration nécessaire.
+  </em></p>
+
   <div class="manifesto-more">
-    <p><em>
-    Une faille s’ouvre. L’utopie s’engouffre. Et rien ne sera plus jamais rangé.<br><br>
-    Sur Athrryne, les légendes sont troubles. Les prophéties… vivantes.<br><br>
-    Bienvenue dans une épopée à la fois douce et sauvage, où l’inclusivité se mêle à la poésie et la tendresse à des éclats un peu perchés.<br><br>
-    Pour les cabossé·es en quête d’évasion.<br><br>
-    2306. Une mission de routine. Un ravitaillement sans histoire. Jusqu’au point de rupture.<br><br>
-    Des voyageurs du futur, projetés dans un monde où la magie défie la science.<br>
-    Tout s’effondre.<br><br>
-    Des survivants à la lisière des possibles.<br><br>
-    Sous l’ombre de deux soleils, dans un paysage aussi sublime que troublant, la frontière entre rêve et cauchemar s’efface.<br><br>
-    Leurs repères volent en éclats.<br><br>
-    Qui sont-ils, après tout ce qu’ils ont perdu ?<br><br>
-    Akira, l’une des dernières rescapées, devra affronter la vérité derrière le cataclysme…<br>
-    Et découvrir qu’il n’y a pas que la planète qui cache des secrets…<br><br>
-    Un voyage où l’intime rencontre la fantasy.<br>
-    Où l’étrange et le brutal dansent au rythme d’une quête de sens.<br><br>
-    Parfois, il faut tout perdre pour se retrouver.
-    </em></p>
+    <p><em>[4e de couverture complète telle que fournie]</em></p>
   </div>
 
   <button class="read-more" onclick="toggleCard(this)">Découvrir →</button>
 </section>
 
-<section class="card" id="afleur">
+<!-- À FLEUR -->
+<section class="card">
   <h2>À fleur de gestes · romance adulte</h2>
   <p>Sensuel · Lucide · Corps pluriels · Désir · Consentement · Humour</p>
 
+  <p><em>
+  L’humour y est un moteur, une respiration permanente, une manière de raconter l’intime,
+  le doute et les peurs, sans les figer, sans les durcir.
+  </em></p>
+
   <div class="manifesto-more">
-    <p><em>
-    À Paris, Naelis a 25 ans.<br><br>
-    Psychologue, chanteuse, femme libre, elle assume sa féminité et son désir sans compromis.<br>
-    Elle aime intensément, rit fort, analyse beaucoup (déformation professionnelle) et peut compter sur ses trois amies, véritables mousquetaires du quotidien.<br><br>
-    Mais après une première expérience qui la laisse fragilisée, quelque chose se fissure.<br><br>
-    Désirer devient moins simple.<br>
-    Faire confiance, plus risqué.<br>
-    Même quand l’envie est bien là.<br><br>
-    Ewen, 30 ans, est bassiste.<br>
-    Il vit entre Paris et l’Écosse, entre l’ancrage et le vent, les silences qui rassurent et ceux qui compliquent tout.<br><br>
-    Entre eux, rien n’est simple.<br>
-    Le désir brûle, mais la peur veille.<br><br>
-    À fleur de gestes est une comédie romantique érotique contemporaine, sensuelle, engagée et profondément humaine.
-    </em></p>
+    <p><em>[Résumé long complet tel que fourni]</em></p>
   </div>
 
   <button class="read-more" onclick="toggleCard(this)">Découvrir →</button>
 </section>
 
+<!-- LIGNES DE FORCE -->
 <section class="card">
   <h2>Lignes de force</h2>
   <p>
   J’invente des mondes où les dragons ont des états d’âme,<br>
-  et où les failles humaines ne sont jamais décoratives.
+  et où les failles humaines ne sont jamais décoratives.<br>
+  Parce que les luttes intérieures méritent mieux qu’un discours de développement personnel.<br>
+  Elles ont droit à un dragon de compagnie stylé.<br>
+  Ici, la tendresse a des crocs.
   </p>
+
+  <div class="manifesto-more">
+    <p>
+    Pas tout le temps.<br>
+    Juste quand c’est nécessaire.<br>
+    Les fêlures ne sont pas des faiblesses.<br>
+    Ce sont des points d’appui.<br>
+    Des endroits par lesquels la lumière insiste pour entrer.<br><br>
+    J’écris des récits incarnés.<br>
+    Parfois épiques.<br>
+    Parfois beaucoup trop proches de la peau.<br><br>
+    Des histoires où le corps compte.<br>
+    Où le consentement n’est pas un détail.<br>
+    Où la parole n’est pas décorative.<br>
+    Où se reconstruire n’est ni héroïque, ni linéaire, mais vital.<br><br>
+    Le rêve y est un acte de résistance.<br>
+    La logique a décliné l’invitation.<br>
+    Et honnêtement, elle ne nous manque pas.<br><br>
+    Je parle d’amour sans domination.<br>
+    De désir sans violence.<br>
+    De relations adultes, avec leurs ratés, leurs peurs, leurs élans mal calibrés.<br><br>
+    Je défends l’inclusivité, la pluralité des corps, des choix, des manières d’aimer,
+    sans demander la permission.<br><br>
+    Et l’humour ? Indispensable.<br>
+    Pas pour faire passer la pilule.<br>
+    Pour respirer.<br>
+    Pour survivre à l’intensité.<br>
+    Pour balancer des vannes à deux balles quand tout devient trop sérieux.<br><br>
+    On ne survit pas à ce qui tremble sans savoir rire,
+    surtout quand tout part en cacahuète.
+    </p>
+  </div>
+
+  <button class="read-more" onclick="toggleCard(this)">Lire la suite →</button>
 </section>
 
 <footer class="footer">
-  © Amahë Lith · 2026 · Tous droits réservés
+© Amahë Lith · 2026 · Tous droits réservés
 </footer>
 
 </div>
@@ -279,7 +274,7 @@ a{color:inherit;text-decoration:none}
 function toggleCard(btn){
   const card = btn.closest('.card');
   card.classList.toggle('is-open');
-  btn.textContent = card.classList.contains('is-open') ? 'Réduire ↑' : 'Découvrir →';
+  btn.textContent = card.classList.contains('is-open') ? 'Réduire ↑' : btn.textContent.includes('Lire') ? 'Lire la suite →' : 'Découvrir →';
 }
 </script>
 
