@@ -214,7 +214,7 @@
       /* On garde la photo à côté du nom (pas de colonne) */
       .hero{
         flex-direction:row;
-        align-items:center;
+        align-items:flex-start;
         gap:18px;
         padding:22px 18px;
       }
@@ -222,7 +222,9 @@
       .hero-text h1{
         font-size:clamp(1.7rem,6vw,2.4rem);
       }
-
+.hero-photo{
+  align-self:flex-start;
+}
       .hero-photo img{
         width:120px;
         height:120px;
