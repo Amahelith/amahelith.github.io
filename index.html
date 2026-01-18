@@ -17,7 +17,39 @@
       --max:980px;
       --accent:#8fb7ff;
     }
+/* Réseaux sociaux */
+.social-links{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+  margin-top:14px;
+}
 
+.social-link{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  padding:8px 10px;
+  border:1px solid rgba(232,238,247,.18);
+  border-radius:14px;
+  background:rgba(11,15,20,.20);
+}
+
+.social-link:hover{
+  border-color:rgba(232,238,247,.30);
+  background:rgba(11,15,20,.30);
+}
+
+.social-name{
+  font-weight:600;
+}
+
+.contact-note{
+  margin:10px 0 0 0;
+  color:var(--muted);
+  font-size:.95rem;
+}
     *{box-sizing:border-box}
 
     body{
