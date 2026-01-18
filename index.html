@@ -241,14 +241,17 @@
     /* ===== MOBILE ===== */
     @media (max-width:860px){
       .hero{
-        flex-direction:column;
+        flex-direction:row;
         align-items:flex-start;
       }
 
       .hero-photo{
         margin-top:10px;
       }
-
+.hero-photo img{
+  width:96px;
+  height:96px;
+}
       .hero-subtitle,
       .hero-tagline{
         white-space:normal; /* si vraiment ça doit passer en 2 lignes sur petits écrans */
