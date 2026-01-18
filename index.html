@@ -477,5 +477,17 @@
       });
     })();
   </script>
+    <script>
+  function toggleCard(id, btn){
+    const block = document.getElementById(id);
+    const isOpen = block.classList.contains("is-open");
+
+    block.classList.toggle("is-open", !isOpen);
+    btn.setAttribute("aria-expanded", String(!isOpen));
+    block.setAttribute("aria-hidden", String(isOpen));
+    btn.textContent = !isOpen ? "Réduire ↑" : "Découvrir →";
+  }
+</script>
+    
 </body>
 </html>
