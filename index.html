@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amahë Lith · Autrice Fantasy & Romance Adulte</title>
+  <title>Amahë Lith · Autrice Fantasy & Romances Adulte</title>
 
-  <meta name="description" content="Découvrez les univers d'Amahë Lith. De la fantasy épique avec 'Athrryne' à la romance adulte avec 'À fleur de gestes'. Des récits inclusifs, intenses et humains." />
+  <meta name="description" content="Découvrez les univers d'Amahë Lith. De la fantasy épique avec la sage 'Athrryne' à la romance adulte avec 'À fleur de gestes'. Des récits inclusifs, intenses et humains." />
   <meta name="author" content="Amahë Lith" />
   <meta name="robots" content="index, follow" />
 
@@ -17,16 +17,16 @@
   <!-- Open Graph / Facebook / LinkedIn / Discord -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.amahelith.fr/" />
-  <meta property="og:title" content="Amahë Lith · Autrice Fantasy & Romance Adulte" />
-  <meta property="og:description" content="Des mondes inventés pour des vérités qui piquent. Découvrez la saga Athrryne et le roman À fleur de gestes." />
+  <meta property="og:title" content="Amahë Lith · Autrice Fantasy & Romances Adulte" />
+  <meta property="og:description" content="Découvrez les univers d'Amahë Lith. De la fantasy épique avec la sage 'Athrryne' à la romance adulte avec 'À fleur de gestes'. Des récits inclusifs, intenses et humains." />
   <!-- 1200x630 -->
   <meta property="og:image" content="https://www.amahelith.com/social-share.png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://www.amahelith.com/" />
-  <meta name="twitter:title" content="Amahë Lith · Autrice Fantasy & Romance Adulte" />
-  <meta name="twitter:description" content="Des mondes inventés pour des vérités qui piquent. Découvrez la saga Athrryne et le roman À fleur de gestes." />
+  <meta name="twitter:title" content="Amahë Lith · Autrice Fantasy & Romances Adulte" />
+  <meta name="twitter:description" content="Découvrez les univers d'Amahë Lith. De la fantasy épique avec la sage 'Athrryne' à la romance adulte avec 'À fleur de gestes'. Des récits inclusifs, intenses et humains." />
   <!-- 1200x630 -->
   <meta name="twitter:image" content="https://www.amahelith.com/social-share.png" />
   <meta name="twitter:creator" content="@Biloulette" />
@@ -112,12 +112,23 @@
     }
 
     .hero-photo img{
-      width:112px;
-      height:112px;
+      width:100px;
+      height:100px;
       object-fit:cover;
       border-radius:50%;
       border:1px solid var(--border);
       display:block;
+    }
+
+    .hero-text-and-photo{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+
+      h1 {
+        flex: 1;
+      }
     }
 
     /* ===== RÉSEAUX ===== */
@@ -247,24 +258,10 @@
     }
 
     /* ===== MOBILE ===== */
-    @media (max-width:860px){
-      .hero{
-        flex-direction:column;
-        align-items:flex-start;
-        position:relative;
-        padding-right:150px;
-      }
-
-      .hero-photo{
-        position:absolute;
-        top:18px;
-        right:18px;
-        margin-top:0;
-      }
-
-      .hero-photo img{
-        width:104px;
-        height:104px;
+    @media (max-width:380px){
+      .hero-text-and-photo {
+        flex-direction: column;
+        align-items: center;
       }
 
       .social-row{
@@ -310,7 +307,13 @@
     <!-- HERO -->
     <header class="hero">
       <div class="hero-text">
-        <h1>Amahë Lith</h1>
+        <div class="hero-text-and-photo">
+          <h1>Amahë Lith</h1>
+          <div class="hero-photo">
+            <!-- IMPORTANT : j’utilise le nom de fichier vu dans ton code précédent -->
+            <img src="photo-amahe.png" alt="Photo d’Amahë Lith" />
+          </div>
+        </div>
         <p class="hero-subtitle">Autrice fantasy & récits adulte</p>
         <p class="hero-tagline">Des mondes inventés pour des vérités qui piquent</p>
 
@@ -325,9 +328,6 @@
             <a class="social-link" href="https://www.tiktok.com/@amahelith" target="_blank" rel="noopener">
               <img src="./icons/tiktok.png" alt="Logo TikTok" width="26" height="26" />
             </a>
-          </div>
-
-          <div class="social-row">
             <a class="social-link" href="https://x.com/Biloulette" target="_blank" rel="noopener noreferrer">
               <img src="./icons/twitter.png" alt="Logo Twitter" width="24" height="24" />
             </a>
@@ -339,14 +339,9 @@
 
         <p class="contact-note">Pour me contacter, privélégiez mes réseaux</p>
       </div>
-
-      <div class="hero-photo">
-        <!-- IMPORTANT : j’utilise le nom de fichier vu dans ton code précédent -->
-        <img src="photo-amahe.png" alt="Photo d’Amahë Lith" />
-      </div>
     </header>
 
-    <p class="intro-projects">Deux projets. Deux tonalités. Une même exigence.</p>
+    <p class="intro-projects">Deux projets. Deux tonalités. <br>Une même exigence.</p>
 
     <!-- ATHRRYNE -->
     <section class="card" id="athrryne">
